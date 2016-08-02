@@ -1,0 +1,12 @@
+{
+	"name":        "vbb-delays",
+	"description": "Generate statistics about delayed VBB departures.",
+	"version":     "0.1.0",
+	"keywords":    ["vbb", "bvg", "public", "transport", "berlin"],
+	"author":      "Jannis R <mail@jannisr.de>",
+	"homepage":    "https://github.com/derhuerst/vbb-delays",
+	"repository":  "derhuerst/vbb-delays",
+	"issues":      "https://github.com/derhuerst/vbb-delays/issues",
+	"license":     "ISC",
+	"engines":     {"node": ">=6"}
+}
