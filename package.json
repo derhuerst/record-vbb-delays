@@ -8,5 +8,11 @@
 	"repository":  "derhuerst/vbb-delays",
 	"issues":      "https://github.com/derhuerst/vbb-delays/issues",
 	"license":     "ISC",
-	"engines":     {"node": ">=6"}
+	"engines":     {"node": ">=6"},
+	"dependencies": {
+		"vbb-stations": "^2",
+		"multipipe": "^0.3.1",
+		"vbb-monitor": "^0.1.1",
+		"ndjson": "^1.4.3"
+	}
 }
