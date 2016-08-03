@@ -1,18 +1,26 @@
 {
 	"name":        "vbb-delays",
-	"description": "Generate statistics about delayed VBB departures.",
+	"description": "Generate statistics on delayed VBB departures.",
 	"version":     "0.1.0",
+	"main":        ["data.json"],
+	"files":       ["data.json"],
 	"keywords":    ["vbb", "bvg", "public", "transport", "berlin"],
 	"author":      "Jannis R <mail@jannisr.de>",
 	"homepage":    "https://github.com/derhuerst/vbb-delays",
 	"repository":  "derhuerst/vbb-delays",
 	"issues":      "https://github.com/derhuerst/vbb-delays/issues",
 	"license":     "ISC",
-	"engines":     {"node": ">=6"},
+	"engines":     {"node": ">=4"},
 	"dependencies": {
 		"vbb-stations": "^2",
 		"multipipe": "^0.3.1",
 		"vbb-monitor": "^0.1.1",
 		"ndjson": "^1.4.3"
+	},
+	"scripts": {
+		"record": "node record.js",
+		"trim": "node trim.js",
+		"cleanup": "rm raw.ndjson.gz raw.json",
+		"build": "npm run record && npm run trim && npm run cleanup"
 	}
 }

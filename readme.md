@@ -1,6 +1,6 @@
 # vbb-delays
 
-**Generate statistics about delayed VBB departures.** Work in progress.
+**Generate statistics about on VBB departures.** Work in progress.
 
 [![npm version](https://img.shields.io/npm/v/vbb-delays.svg)](https://www.npmjs.com/package/vbb-delays)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/vbb-delays.svg)
