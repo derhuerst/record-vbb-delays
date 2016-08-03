@@ -6,4 +6,5 @@ node_modules
 npm-debug.log
 
 .scaleway
-*.ndjson.gz
+raw.ndjson.gz
+data.json
