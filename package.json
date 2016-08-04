@@ -15,6 +15,7 @@
 		"vbb-stations": "^2",
 		"multipipe": "^0.3.1",
 		"vbb-monitor": "^0.1.1",
+		"through2-map": "^2",
 		"ndjson": "^1.4.3"
 	},
 	"scripts": {

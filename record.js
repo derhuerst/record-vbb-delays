@@ -2,6 +2,7 @@
 
 const pipe = require('multipipe')
 const monitor = require('vbb-monitor')
+const map = require('through2-map')
 const cfg = require('./config')
 const ndjson = require('ndjson')
 const zlib = require('zlib')
@@ -9,8 +10,10 @@ const fs = require('fs')
 
 
 
-const data = monitor(cfg.stations, cfg.interval * 60 * 1000)
-.on('error', console.error)
+const data = pipe(
+	  monitor(cfg.stations, cfg.interval * 60 * 1000)
+	, map.obj((dep) => {dep.delay /= 1000; return dep})
+).on('error', console.error)
 
 const out = pipe(
 	  ndjson.stringify()
