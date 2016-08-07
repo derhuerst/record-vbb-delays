@@ -2,7 +2,8 @@
 
 **Generate statistics about on VBB departures.** Work in progress.
 
-[![npm version](https://img.shields.io/npm/v/vbb-delays.svg)](https://www.npmjs.com/package/vbb-delays)
+[![dependency status](https://img.shields.io/david/derhuerst/vbb-delays.svg)](https://david-dm.org/derhuerst/vbb-delays)
+[![dev dependency status](https://img.shields.io/david/dev/derhuerst/vbb-delays.svg)](https://david-dm.org/derhuerst/vbb-delays#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/vbb-delays.svg)
 
 
@@ -18,7 +19,23 @@ npm install --production
 
 ```shell
 # edit config.js
-todo
+node record.js
+```
+
+This will record the data and stream it into `raw.ndjson.gz`. [It will fetch all stations, slightly offset to avoid network congestion.](https://github.com/derhuerst/vbb-monitor#usage)
+
+*Pro Tip:* Use [`screen`](https://www.gnu.org/software/screen/manual/screen.html#Invoking-Screen) to handle this long-running process.
+
+When finished, run `node trim.js`. `data.json` will now look as follows.
+
+```js
+{
+	// station id
+	"8011491": {
+		// line name
+		"S4": [60, 540, 60, 0, 0 60, 180, 0]
+	}
+}
 ```
 
 
