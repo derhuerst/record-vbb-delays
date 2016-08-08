@@ -10,9 +10,10 @@ const fs = require('fs')
 
 
 
-const data = pipe(
-	  monitor(cfg.stations, cfg.interval * 60 * 1000)
-	, map.obj((dep) => {dep.delay /= 1000; return dep})
+const data = monitor(cfg.stations, cfg.interval * 60 * 1000)
+pipe(
+	data,
+	map.obj((dep) => {dep.delay /= 1000; return dep})
 ).on('error', console.error)
 
 const out = pipe(
