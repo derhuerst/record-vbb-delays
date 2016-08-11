@@ -12,19 +12,14 @@ const fs = require('fs')
 
 const data = monitor(cfg.stations, cfg.interval * 60 * 1000)
 pipe(
-	data,
-	map.obj((dep) => {dep.delay /= 1000; return dep})
-).on('error', console.error)
-
-const out = pipe(
-	  ndjson.stringify()
+	  data
+	, map.obj((dep) => {dep.delay /= 1000; return dep})
+	, ndjson.stringify()
 	, zlib.createGzip()
 	, fs.createWriteStream('raw.ndjson.gz')
 ).on('error', console.error)
 
 
-
-data.pipe(out)
 
 setTimeout(data.stop, cfg.interval * 60 * 1000 * cfg.iterations)
 process.on('SIGINT', () => {
