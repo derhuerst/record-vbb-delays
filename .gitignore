@@ -5,6 +5,6 @@ Thumbs.db
 node_modules
 npm-debug.log
 
-.scaleway
+.okfn
 raw.ndjson.gz
 data.json

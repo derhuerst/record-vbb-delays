@@ -19,6 +19,7 @@
 		"ndjson": "^1.4.3"
 	},
 	"scripts": {
+		"ssh": "ssh -i ./okfn -p 2208 janis@kiesinger.okfn.de",
 		"record": "node record.js",
 		"trim": "node trim.js",
 		"cleanup": "rm raw.ndjson.gz raw.json",
