@@ -13,7 +13,11 @@ const fs = require('fs')
 const data = monitor(cfg.stations, cfg.interval * 60 * 1000)
 pipe(
 	  data
-	, map.obj((dep) => {dep.delay /= 1000; return dep})
+	, map.obj((dep) => {
+		dep.delay /= 1000;
+		dep.when /= 1000;
+		return dep
+	})
 	, ndjson.stringify()
 	, zlib.createGzip()
 	, fs.createWriteStream('raw.ndjson.gz')

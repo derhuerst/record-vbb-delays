@@ -18,7 +18,7 @@ for (let station in data) {
 		process.stdout.write([
 			station, line,
 			delayed + '/' + total,
-			'mean:', ms(Math.round(mean))
+			'mean:', ms(Math.round(mean * 1000))
 		].join(' ') + '\n')
 	}
 }
