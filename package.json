@@ -13,10 +13,10 @@
 	"engines":     {"node": ">=4"},
 	"dependencies": {
 		"vbb-stations": "^2.1",
-		"multipipe": "^1.0.1",
-		"vbb-monitor": "derhuerst/vbb-monitor#029f31d6532999a9ef8d48a6c50f5a4f560f8e9b",
-		"through2-map": "^2",
-		"ndjson": "^1.4.3"
+		"multipipe": "^1.0.2",
+		"vbb-monitor": "^0.3.0",
+		"through2-map": "^3.0.0",
+		"ndjson": "^1.5.0"
 	},
 	"scripts": {
 		"ssh": "ssh -i ./okfn -p 2208 janis@kiesinger.okfn.de",
