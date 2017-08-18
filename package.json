@@ -1,25 +1,36 @@
 {
-	"name":        "vbb-delays",
+	"name": "vbb-delays",
 	"description": "Generate statistics on delayed VBB departures.",
-	"version":     "0.1.0",
-	"main":        ["data.json"],
-	"files":       ["data.json"],
-	"keywords":    ["vbb", "bvg", "public", "transport", "berlin"],
-	"author":      "Jannis R <mail@jannisr.de>",
-	"homepage":    "https://github.com/derhuerst/vbb-delays",
-	"repository":  "derhuerst/vbb-delays",
-	"issues":      "https://github.com/derhuerst/vbb-delays/issues",
-	"license":     "ISC",
-	"engines":     {"node": ">=4"},
+	"version": "0.1.0",
+	"main": [
+		"data.json"
+	],
+	"files": [
+		"data.json"
+	],
+	"keywords": [
+		"vbb",
+		"bvg",
+		"public",
+		"transport",
+		"berlin"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/vbb-delays",
+	"repository": "derhuerst/vbb-delays",
+	"issues": "https://github.com/derhuerst/vbb-delays/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=4"
+	},
 	"dependencies": {
-		"vbb-stations": "^2.1",
 		"multipipe": "^1.0.2",
-		"vbb-monitor": "^0.3.0",
+		"ndjson": "^1.5.0",
 		"through2-map": "^3.0.0",
-		"ndjson": "^1.5.0"
+		"vbb-monitor": "^1.0.0",
+		"vbb-stations": "^5.5.0"
 	},
 	"scripts": {
-		"ssh": "ssh -i ./okfn -p 2208 janis@kiesinger.okfn.de",
 		"record": "node record.js",
 		"trim": "node trim.js",
 		"cleanup": "rm raw.ndjson.gz raw.json",
