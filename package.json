@@ -2,11 +2,9 @@
 	"name": "record-vbb-delays",
 	"description": "Generate statistics on delayed VBB departures.",
 	"version": "0.1.0",
-	"main": [
-		"data.json"
-	],
+	"main": "index.js",
 	"files": [
-		"data.json"
+		"index.js"
 	],
 	"keywords": [
 		"vbb",
@@ -21,19 +19,10 @@
 	"issues": "https://github.com/derhuerst/record-vbb-delays/issues",
 	"license": "ISC",
 	"engines": {
-		"node": ">=4"
+		"node": ">=6"
 	},
 	"dependencies": {
-		"multipipe": "^1.0.2",
-		"ndjson": "^1.5.0",
-		"through2-map": "^3.0.0",
-		"vbb-monitor": "^1.0.0",
-		"vbb-stations": "^5.5.0"
 	},
 	"scripts": {
-		"record": "node record.js",
-		"trim": "node trim.js",
-		"cleanup": "rm raw.ndjson.gz raw.json",
-		"build": "npm run record && npm run trim && npm run cleanup"
 	}
 }
