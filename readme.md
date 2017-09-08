@@ -1,18 +1,18 @@
-# vbb-delays
+# record-vbb-delays
 
 **Generate statistics about on VBB departures.** Work in progress.
 
-[![dependency status](https://img.shields.io/david/derhuerst/vbb-delays.svg)](https://david-dm.org/derhuerst/vbb-delays)
-[![dev dependency status](https://img.shields.io/david/dev/derhuerst/vbb-delays.svg)](https://david-dm.org/derhuerst/vbb-delays#info=devDependencies)
-![ISC-licensed](https://img.shields.io/github/license/derhuerst/vbb-delays.svg)
+[![dependency status](https://img.shields.io/david/derhuerst/record-vbb-delays.svg)](https://david-dm.org/derhuerst/record-vbb-delays)
+[![dev dependency status](https://img.shields.io/david/dev/derhuerst/record-vbb-delays.svg)](https://david-dm.org/derhuerst/record-vbb-delays#info=devDependencies)
+![ISC-licensed](https://img.shields.io/github/license/derhuerst/record-vbb-delays.svg)
 [![gitter channel](https://badges.gitter.im/derhuerst/vbb-rest.svg)](https://gitter.im/derhuerst/vbb-rest)
 
 
 ## Installing
 
 ```shell
-git clone https://github.com/derhuerst/vbb-delays.git
-cd vbb-delays
+git clone https://github.com/derhuerst/record-vbb-delays.git
+cd record-vbb-delays
 npm install --production
 ```
 
@@ -23,7 +23,7 @@ npm install --production
 node record.js
 ```
 
-This will record the data and stream it into `raw.ndjson.gz`. [It will fetch all stations, slightly offset to avoid network congestion.](https://github.com/derhuerst/vbb-monitor#usage)
+This will record the data and stream it into `raw.ndjson.gz`. [It will fetch all stations, slightly off-set to avoid network congestion.](https://github.com/derhuerst/vbb-monitor#usage)
 
 *Pro Tip:* Use [`screen`](https://www.gnu.org/software/screen/manual/screen.html#Invoking-Screen) to handle this long-running process.
 
@@ -42,4 +42,4 @@ When finished, run `node trim.js`. `data.json` will now look as follows.
 
 ## Contributing
 
-If you **have a question**, **found a bug** or want to **propose a feature**, have a look at [the issues page](https://github.com/derhuerst/vbb-delays/issues).
+If you **have a question**, **found a bug** or want to **propose a feature**, have a look at [the issues page](https://github.com/derhuerst/record-vbb-delays/issues).

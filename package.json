@@ -1,5 +1,5 @@
 {
-	"name": "vbb-delays",
+	"name": "record-vbb-delays",
 	"description": "Generate statistics on delayed VBB departures.",
 	"version": "0.1.0",
 	"main": [
@@ -16,9 +16,9 @@
 		"berlin"
 	],
 	"author": "Jannis R <mail@jannisr.de>",
-	"homepage": "https://github.com/derhuerst/vbb-delays",
-	"repository": "derhuerst/vbb-delays",
-	"issues": "https://github.com/derhuerst/vbb-delays/issues",
+	"homepage": "https://github.com/derhuerst/record-vbb-delays",
+	"repository": "derhuerst/record-vbb-delays",
+	"issues": "https://github.com/derhuerst/record-vbb-delays/issues",
 	"license": "ISC",
 	"engines": {
 		"node": ">=4"
