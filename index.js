@@ -28,6 +28,9 @@ const record = (stations, interval, db) => {
 	out.stop = () => {
 		deps.stop()
 	}
+	deps.on('stats', (stats) => {
+		out.emit('stats', stats)
+	})
 	return out
 }
 

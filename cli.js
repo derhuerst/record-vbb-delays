@@ -4,6 +4,9 @@
 const mri = require('mri')
 const level = require('level')
 const vbbStations = require('vbb-stations')
+const {isatty} = require('tty')
+const differ = require('ansi-diff-stream')
+const esc = require('ansi-escapes')
 
 const pkg = require('./package.json')
 const record = require('.')
@@ -20,6 +23,7 @@ Options:
 	--db       -d  Path to LevelDB. Default: vbb-delays.ldb
 	--stations -s  Stations to monitor. Default: all
 	--interval -i  In seconds. Default: 30
+	--quiet    -q  Don't show progress reports. Default: false
 Examples:
     record-vbb-delays --db my-custom.leveldb -s 900000100003,900000100001
 \n`)
@@ -56,3 +60,22 @@ const db = level(argv.db || argv.d || 'vbb-delays.ldb')
 const recording = record(stations, interval, db)
 recording.once('error', showError)
 process.once('beforeExit', () => recording.stop())
+
+if (!argv.quiet && !argv.q) {
+	const clearReports = isatty(process.stderr.fd)
+
+	let reporter = process.stderr
+	if (clearReports) {
+		reporter = differ()
+		reporter.pipe(process.stderr)
+	}
+
+	const report = ({reqs, departures, avgDuration}) => {
+		reporter.write([
+			reqs + (reqs === 1 ? ' request' : ' requests'),
+			departures + (departures === 1 ? ' departure' : ' departures'),
+			'~ ' + Math.round(avgDuration) + ' ms/req'
+		].join(', ') + (clearReports ? '' : '\n'))
+	}
+	recording.on('stats', report)
+}

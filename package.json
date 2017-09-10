@@ -26,9 +26,11 @@
 		"node": ">=6"
 	},
 	"dependencies": {
+		"ansi-diff-stream": "^1.2.0",
+		"ansi-escapes": "^3.0.0",
 		"level": "^1.7.0",
 		"mri": "^1.1.0",
-		"vbb-monitor": "^1.1.0",
+		"vbb-monitor": "^2.0.0",
 		"vbb-stations": "^5.5.0"
 	},
 	"scripts": {
