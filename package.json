@@ -30,9 +30,11 @@
 		"ansi-escapes": "^3.0.0",
 		"level": "^1.7.0",
 		"mri": "^1.1.0",
+		"pkg": "^4.2.4",
 		"vbb-monitor": "^2.0.0",
 		"vbb-stations": "^5.5.0"
 	},
 	"scripts": {
+		"build": "pkg -c package.json --public cli.js -o dist/record-vbb-delays"
 	}
 }
