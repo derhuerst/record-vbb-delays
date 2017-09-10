@@ -3,8 +3,12 @@
 	"description": "Generate statistics on delayed VBB departures.",
 	"version": "0.1.0",
 	"main": "index.js",
+	"bin": {
+		"record-vbb-delays": "./cli.js"
+	},
 	"files": [
-		"index.js"
+		"index.js",
+		"cli.js"
 	],
 	"keywords": [
 		"vbb",
@@ -22,10 +26,10 @@
 		"node": ">=6"
 	},
 	"dependencies": {
-		"vbb-monitor": "^1.1.0"
-	},
-	"peerDependencies": {
-		"level": "^1.7.0"
+		"level": "^1.7.0",
+		"mri": "^1.1.0",
+		"vbb-monitor": "^1.1.0",
+		"vbb-stations": "^5.5.0"
 	},
 	"scripts": {
 	}

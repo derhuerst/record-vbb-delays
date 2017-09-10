@@ -25,6 +25,9 @@ const record = (stations, interval, db) => {
 		}
 	})
 
+	out.stop = () => {
+		deps.stop()
+	}
 	return out
 }
 
