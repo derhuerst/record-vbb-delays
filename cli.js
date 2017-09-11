@@ -3,6 +3,7 @@
 
 const mri = require('mri')
 const level = require('level')
+const fs = require('fs')
 const vbbStations = require('vbb-stations')
 const {isatty} = require('tty')
 const differ = require('ansi-diff-stream')
@@ -12,7 +13,7 @@ const pkg = require('./package.json')
 const record = require('.')
 
 const argv = mri(process.argv.slice(2), {
-	boolean: ['help', 'h', 'version', 'v']
+	boolean: ['help', 'h', 'version', 'v', 'quiet', 'q']
 })
 
 if (argv.help || argv.h) {
@@ -20,12 +21,14 @@ if (argv.help || argv.h) {
 Usage:
     record-vbb-delays
 Options:
-	--db       -d  Path to LevelDB. Default: vbb-delays.ldb
-	--stations -s  Stations to monitor. Default: all
-	--interval -i  In seconds. Default: 30
-	--quiet    -q  Don't show progress reports. Default: false
+	--db            -d  Path to LevelDB. Default: vbb-delays.ldb
+	--stations      -s  Stations to monitor. Default: all
+	--stations-file     JSON file with stations to monitor.
+	--interval      -i  In seconds. Default: 30
+	--quiet         -q  Don't show progress reports. Default: false
 Examples:
     record-vbb-delays --db my-custom.leveldb -s 900000100003,900000100001
+    record-vbb-delays --stations-file stations-to-monitor.json -q
 \n`)
 	process.exit(0)
 }
@@ -47,7 +50,9 @@ if (stations) {
 	for (let station of stations) {
 		if (!nr.test(station)) showError('Every station ID must be a number.')
 	}
-} else stations = vbbStations('all')
+} else if (argv['stations-file']) {
+	stations = JSON.parse(fs.readFileSync(argv['stations-file']), {encoding: 'utf8'})
+} else stations = vbbStations('all').map(s => s.id)
 
 let interval = argv.interval || argv.i
 if (interval) {

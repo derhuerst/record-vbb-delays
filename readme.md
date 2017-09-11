@@ -19,12 +19,14 @@ npm i -g record-vbb-delays
 Usage:
     record-vbb-delays
 Options:
-	--db       -d  Path to LevelDB. Default: vbb-delays.ldb
-	--stations -s  Stations to monitor. Default: all
-	--interval -i  In seconds. Default: 30
-	--quiet    -q  Don't show progress reports. Default: false
+	--db            -d  Path to LevelDB. Default: vbb-delays.ldb
+	--stations      -s  Stations to monitor. Default: all
+	--stations-file     JSON file with stations to monitor.
+	--interval      -i  In seconds. Default: 30
+	--quiet         -q  Don't show progress reports. Default: false
 Examples:
     record-vbb-delays --db my-custom.leveldb -s 900000100003,900000100001
+    record-vbb-delays --stations-file stations-to-monitor.json -q
 ```
 
 You can get station IDs using [`vbb-stations-cli`](https://github.com/derhuerst/vbb-stations-cli).
