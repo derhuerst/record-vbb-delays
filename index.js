@@ -22,6 +22,7 @@ const record = (stations, interval, db) => {
 			db.batch(batch, (err) => {
 				if (err) out.emit('error', err)
 			})
+			batch = []
 		}
 	})
 
