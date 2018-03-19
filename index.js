@@ -14,7 +14,7 @@ const record = (stations, interval, db) => {
 		const t = Math.round(new Date(dep.when) / 1000)
 		batch.push({
 			type: 'put',
-			key: [dep.station.id, dep.line.id, t].join('-'),
+			key: [dep.line.id, dep.station.id, t].join('-'),
 			value: JSON.stringify(dep)
 		})
 
