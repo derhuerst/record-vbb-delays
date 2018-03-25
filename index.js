@@ -1,12 +1,13 @@
 'use strict'
 
 const {EventEmitter} = require('events')
-const monitor = require('vbb-monitor')
+const hafas = require('vbb-hafas')
+const monitor = require('hafas-monitor-departures')
 
 const record = (stations, interval, db) => {
 	const out = new EventEmitter()
 
-	const deps = monitor(stations, interval)
+	const deps = monitor(hafas, stations, interval)
 	deps.on('error', err => out.emit('err'))
 
 	let batch = []

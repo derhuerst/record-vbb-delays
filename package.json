@@ -28,10 +28,11 @@
 	"dependencies": {
 		"ansi-diff-stream": "^1.2.0",
 		"ansi-escapes": "^3.0.0",
+		"hafas-monitor-departures": "^1.0.0",
 		"level": "^3.0.0",
 		"mri": "^1.1.0",
 		"pkg": "^4.3.0",
-		"vbb-monitor": "^2.1.0",
+		"vbb-hafas": "^4.1.1",
 		"vbb-stations": "^6.3.0"
 	},
 	"scripts": {
