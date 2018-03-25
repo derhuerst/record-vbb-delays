@@ -31,11 +31,13 @@
 		"hafas-monitor-departures": "^1.0.0",
 		"hafas-record-delays": "^0.1.0",
 		"mri": "^1.1.0",
-		"pkg": "^4.3.0",
 		"vbb-hafas": "^4.1.1",
 		"vbb-stations": "^6.3.0"
 	},
 	"scripts": {
 		"build": "pkg -c package.json --public cli.js -o dist/record-vbb-delays"
+	},
+	"devDependencies": {
+		"pkg": "^4.3.0"
 	}
 }
