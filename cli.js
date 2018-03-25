@@ -2,7 +2,6 @@
 'use strict'
 
 const mri = require('mri')
-const level = require('level')
 const fs = require('fs')
 const vbbStations = require('vbb-stations')
 const {isatty} = require('tty')
@@ -60,9 +59,8 @@ if (interval) {
 	if (Number.isNaN(interval)) showError('Interval musst be a number.')
 } else interval = 30 * 1000
 
-const db = level(argv.db || argv.d || 'vbb-delays.ldb')
-
-const recording = record(stations, interval, db)
+const dbPath = argv.db || argv.d || 'vbb-delays.ldb'
+const recording = record(stations, interval, dbPath)
 recording.once('error', showError)
 process.once('beforeExit', () => recording.stop())
 
