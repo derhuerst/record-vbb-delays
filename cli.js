@@ -45,7 +45,7 @@ const showError = (err) => {
 
 let stations = argv.stations || argv.s
 if (stations) {
-	stations = 'string' === stations ? stations.split(',') : [stations + '']
+	stations = 'string' === typeof stations ? stations.split(',') : [stations + '']
 	const nr = /^\d+$/
 	for (let station of stations) {
 		if (!nr.test(station)) showError('Every station ID must be a number.')
