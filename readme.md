@@ -14,6 +14,13 @@
 npm i -g record-vbb-delays
 ```
 
+Or just use [npx](https://npmjs.com/package/npx):
+
+```shell
+record-vbb-delays --interval 10 --stations 900000100003,900000100001
+```
+
+
 ## Usage
 
 ```shell
