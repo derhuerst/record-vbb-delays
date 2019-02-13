@@ -28,10 +28,10 @@
 	"dependencies": {
 		"ansi-diff-stream": "^1.2.0",
 		"ansi-escapes": "^3.0.0",
-		"hafas-monitor-departures": "^1.0.0",
-		"hafas-record-delays": "^0.1.0",
+		"bvg-hafas": "^1.1.0",
+		"hafas-monitor-departures": "^2.0.0",
+		"hafas-record-delays": "^1.0.1",
 		"mri": "^1.1.0",
-		"vbb-hafas": "^4.1.1",
 		"vbb-stations": "^6.3.0"
 	},
 	"scripts": {

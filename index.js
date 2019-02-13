@@ -1,8 +1,10 @@
 'use strict'
 
 const createMonitor = require('hafas-monitor-departures')
-const hafas = require('vbb-hafas')
+const createHafas = require('bvg-hafas')
 const createRecorder = require('hafas-record-delays')
+
+const hafas = createHafas('record-vbb-delays')
 
 const record = (stations, interval, dbPath) => {
 	const monitor = createMonitor(hafas, stations, interval)
