@@ -74,6 +74,10 @@ if (!argv.quiet && !argv.q) {
 	if (clearReports) {
 		reporter = differ()
 		reporter.pipe(process.stderr)
+		recording.on('error', () => {
+			process.stderr.write('\n')
+			reporter.reset()
+		})
 	}
 
 	const report = ({reqs, departures, avgDuration}) => {
