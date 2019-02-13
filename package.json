@@ -8,7 +8,8 @@
 	},
 	"files": [
 		"index.js",
-		"cli.js"
+		"cli.js",
+		"lib"
 	],
 	"keywords": [
 		"vbb",
@@ -35,7 +36,8 @@
 		"vbb-stations": "^6.3.0"
 	},
 	"scripts": {
-		"build": "pkg -c package.json --public cli.js -o dist/record-vbb-delays"
+		"build": "pkg -c package.json --public cli.js -o dist/record-vbb-delays",
+		"install": "node lib/generate-install-id.js >id.json"
 	},
 	"devDependencies": {
 		"pkg": "^4.3.0"
