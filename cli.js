@@ -62,8 +62,9 @@ if (interval) {
 const dbPath = argv.db || argv.d || 'vbb-delays.ldb'
 const recording = record(stations, interval, dbPath)
 recording.on('error', (err) => {
-	if (process.env.NODE_DEBUG === 'record-vbb-delays') console.error(err)
-	else console.error(err && err.message || (err + ''))
+	if (!err.isHafasError || process.env.NODE_DEBUG === 'record-vbb-delays') {
+		console.error(err)
+	} else console.error(err && err.message || (err + ''))
 })
 process.once('beforeExit', () => recording.stop())
 
