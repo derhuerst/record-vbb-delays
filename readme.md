@@ -25,7 +25,7 @@ record-vbb-delays --interval 10 --stations 900000100003,900000100001
 
 ```shell
 Usage:
-    record-vbb-delays
+    record-vbb-delays [command] [options]
 Options:
 	--db            -d  Path to LevelDB. Default: vbb-delays.ldb
 	--stations      -s  Stations to monitor. Default: all
@@ -35,6 +35,7 @@ Options:
 Examples:
     record-vbb-delays --db my-custom.leveldb -s 900000100003,900000100001
     record-vbb-delays --stations-file stations-to-monitor.json -q
+    record-vbb-delays export-sql --db my-custom.leveldb
 ```
 
 You can get station IDs using [`vbb-stations-cli`](https://github.com/derhuerst/vbb-stations-cli).
