@@ -29,11 +29,11 @@
 	"dependencies": {
 		"ansi-diff-stream": "^1.2.0",
 		"ansi-escapes": "^3.0.0",
-		"bvg-hafas": "^1.1.0",
 		"hafas-monitor-departures": "^2.2.0",
 		"hafas-record-delays": "^3.0.0",
 		"mri": "^1.1.0",
 		"pump": "^3.0.0",
+		"vbb-hafas": "^5.1.0",
 		"vbb-stations": "^6.3.0"
 	},
 	"scripts": {

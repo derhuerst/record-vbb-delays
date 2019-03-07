@@ -68,7 +68,7 @@ if (cmd === 'export-sql') {
 			if (!nr.test(station)) showError('Every station ID must be a number.')
 		}
 	} else if (argv['stations-file']) {
-		stations = JSON.parse(fs.readFileSync(argv['stations-file']), {encoding: 'utf8'})
+		stations = JSON.parse(readFileSync(argv['stations-file']), {encoding: 'utf8'})
 	} else stations = vbbStations('all').map(s => s.id)
 
 	let interval = argv.interval || argv.i
