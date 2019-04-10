@@ -52,6 +52,11 @@ if (cmd === 'export-sql') {
 
 	exportSql(dbPath, out)
 	pump(out, process.stdout, showError)
+} else if (cmd === 'export-ndjson') {
+	const exportNdjson = require('hafas-record-delays/export-ndjson')
+
+	process.stdout.on('error', showError)
+	exportNdjson(dbPath, process.stdout)
 } else if (cmd === 'record' || !cmd) {
 	const {readFileSync} = require('fs')
 	const vbbStations = require('vbb-stations')
