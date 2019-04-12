@@ -22,6 +22,7 @@ Examples:
     record-vbb-delays --db my-custom.leveldb -s 900000100003,900000100001
     record-vbb-delays --stations-file stations-to-monitor.json -q
     record-vbb-delays export-sql --db my-custom.leveldb
+    record-vbb-delays export-ndjson --db my-custom.leveldb
 \n`)
 	process.exit(0)
 }

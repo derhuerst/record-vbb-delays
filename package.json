@@ -1,7 +1,7 @@
 {
 	"name": "record-vbb-delays",
 	"description": "Record VBB departures.",
-	"version": "3.0.0",
+	"version": "3.1.0",
 	"main": "index.js",
 	"bin": {
 		"record-vbb-delays": "./cli.js"
@@ -30,7 +30,7 @@
 		"ansi-diff-stream": "^1.2.0",
 		"ansi-escapes": "^3.0.0",
 		"hafas-monitor-departures": "^2.2.0",
-		"hafas-record-delays": "^3.1.0",
+		"hafas-record-delays": "^3.2.0",
 		"mri": "^1.1.0",
 		"pump": "^3.0.0",
 		"vbb-hafas": "^5.1.0",
