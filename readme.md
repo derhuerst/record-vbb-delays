@@ -35,8 +35,9 @@ Options:
 Examples:
     record-vbb-delays --db my-custom.leveldb -s 900000100003,900000100001
     record-vbb-delays --stations-file stations-to-monitor.json -q
-    record-vbb-delays export-sql --db my-custom.leveldb
-    record-vbb-delays export-ndjson --db my-custom.leveldb
+    record-vbb-delays export-sql --db my-custom.leveldb >delays.sql
+    record-vbb-delays export-ndjson --db my-custom.leveldb >delays.ndjson
+    cat delays.ndjson | record-vbb-delays last-dep-per-stopover >last-dep-delays.ndjson
 ```
 
 You can get station IDs using [`vbb-stations-cli`](https://github.com/derhuerst/vbb-stations-cli).

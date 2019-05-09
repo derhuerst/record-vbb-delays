@@ -21,8 +21,9 @@ Options:
 Examples:
     record-vbb-delays --db my-custom.leveldb -s 900000100003,900000100001
     record-vbb-delays --stations-file stations-to-monitor.json -q
-    record-vbb-delays export-sql --db my-custom.leveldb
-    record-vbb-delays export-ndjson --db my-custom.leveldb
+    record-vbb-delays export-sql --db my-custom.leveldb >delays.sql
+    record-vbb-delays export-ndjson --db my-custom.leveldb >delays.ndjson
+    cat delays.ndjson | record-vbb-delays last-dep-per-stopover >last-dep-delays.ndjson
 \n`)
 	process.exit(0)
 }
@@ -58,6 +59,19 @@ if (cmd === 'export-sql') {
 
 	process.stdout.on('error', showError)
 	exportNdjson(dbPath, process.stdout)
+} else if (cmd === 'last-dep-per-stopover') {
+	const pump = require('pump')
+	const {parse, stringify} = require('ndjson')
+	const lastDepPerStopover = require('hafas-record-delays/last-dep-per-stopover')
+
+	pump(
+		process.stdin,
+		parse(),
+		lastDepPerStopover(),
+		stringify(),
+		process.stdout,
+		showError
+	)
 } else if (cmd === 'record' || !cmd) {
 	const {readFileSync} = require('fs')
 	const vbbStations = require('vbb-stations')
