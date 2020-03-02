@@ -1,6 +1,10 @@
 # record-vbb-delays
 
-**Record VBB departures.**
+**Deprecated. Use [`monitor-hafas-cli@2`](https://github.com/derhuerst/monitor-hafas-cli) with [`record-hafas-data`](https://github.com/derhuerst/record-hafas-data).**
+
+---
+
+Record VBB departures.
 
 [![npm version](https://img.shields.io/npm/v/record-vbb-delays.svg)](https://www.npmjs.com/package/record-vbb-delays)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/record-vbb-delays.svg)
